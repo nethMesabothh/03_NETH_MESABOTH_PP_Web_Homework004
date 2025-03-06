@@ -6,16 +6,31 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* congfig cutom color */
-  --color-custom-pink: #f4538a;
-  --color-custom-sky-blue: #59d5e0;
-  --color-custom-sky-blue-500: #0bbdcd;
-  --color-custom-carrot: #faa300;
-  --color-custom-yellow: #f5dd61;
-  --color-custom-yellow-500: #eece26;
-  --color-light-gray: #f5f7f8;
-  --color-primary-text: #2b343b;
+	/* congfig cutom color */
+	--color-custom-pink: #f4538a;
+	--color-custom-sky-blue: #59d5e0;
+	--color-custom-sky-blue-500: #0bbdcd;
+	--color-custom-carrot: #faa300;
+	--color-custom-yellow: #f5dd61;
+	--color-custom-yellow-500: #eece26;
+	--color-light-gray: #f5f7f8;
+	--color-primary-text: #2b343b;
 
-  /* config custom font */
-  --font-rubik: "Rubik", "sans-serif";
+	/* config custom font */
+	--font-rubik: "Rubik", "sans-serif";
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.hidden-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+/* For Firefox */
+.hidden-scrollbar {
+	scrollbar-width: none;
+}
+
+/* For Edge & IE */
+.hidden-scrollbar {
+	-ms-overflow-style: none;
 }
