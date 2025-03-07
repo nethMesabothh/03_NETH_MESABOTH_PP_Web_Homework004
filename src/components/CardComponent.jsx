@@ -13,7 +13,19 @@ export default function CardComponent({ newProject }) {
 					>
 						<div className="flex justify-between mb-5">
 							{/* date */}
-							<p className={`text-custom-sky-blue font-medium`}>
+							<p
+								className={`font-medium ${
+									project.progress === "100"
+										? "text-custom-sky-blue"
+										: project.progress === "75"
+										? "text-custom-carrot w-[75%]"
+										: project.progress === "50"
+										? "text-yellow-500 w-[50%]"
+										: project.progress === "25"
+										? "text-custom-pink w-[25%]"
+										: ""
+								}`}
+							>
 								{formatDate(project.dueDate)}
 							</p>
 							<EllipsisVertical size={20} color="#374957" />
@@ -22,7 +34,7 @@ export default function CardComponent({ newProject }) {
 						<h5 className="capitalize mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
 							{project.projectName}
 						</h5>
-						<p className="line-clamp-2 mb-3 font-normal text-justify text-gray-400 dark:text-gray-400">
+						<p className="line-clamp-2 mb-3 font-normal text-justify text-gray-400 dark:text-gray-400 h-[50px]">
 							{project.description
 								? project.description
 								: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique veritatis, excepturi quam nobis pariatur sed, repudiandae sapiente sunt fugiat tempora nam harum inventore"}
@@ -46,20 +58,6 @@ export default function CardComponent({ newProject }) {
 										? "bg-custom-pink w-[25%]"
 										: ""
 								}`}
-							></div>
-							<div
-								className="border-l-4 rounded-full border-l-custom-pink h-5 absolute -top-1 left-1/4"
-								title="25%"
-							></div>
-
-							<div
-								className="border-l-4 rounded-full border-l-custom-yellow-500 h-5 absolute -top-1 left-2/4"
-								title="50%"
-							></div>
-
-							<div
-								className="border-l-4 rounded-full border-l-custom-carrot h-5 absolute -top-1 left-3/4"
-								title="75%"
 							></div>
 						</div>
 
